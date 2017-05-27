@@ -1,0 +1,81 @@
+// Generic comment # 1 This is a comment
+// Generic comment # 2 Hello there
+
+// TB_Table_1 This table listed below
+// TB_Table_2 This table listed below too
+
+
+Table TB_Table_1 (real DTAMB) {
+
+	description = "Description here";
+	
+	DTAMB.interp = "linear";
+	DTAMB.extrap = "none";
+
+	DTAMB = { -18, -9, 0, 9, 18}
+	N1C2 = {10001, 10002, 10003, 10004, 10005}
+
+	
+}
+
+Table TB_Table_2 (real MN, real DTAMB) {
+
+	description = "Description here";
+	
+	MN.interp = "linear";
+	MN.extrap = "none";
+	DTAMB.interp = "linear";
+	DTAMB.extrap = "none";
+	
+
+	MN = 0.0 {
+		DTAMB = { -18, -9, 0, 9, 18}
+		
+		N1C2 = {10001, 10002, 10003, 10004, 10005}
+	}
+	MN = 1.0 {
+		DTAMB = { -18, -9, 0, 9, 18}
+		
+		N1C2 = {12001, 12002, 12003, 12004, 12005}
+	}		
+	
+}
+
+Table TB_Table_3 (real ALT, real MN, real DTAMB) {
+
+	description = "Description here";
+	
+	ALT.interp = "linear";
+	ALT.extrap = "none";
+	MN.interp = "linear";
+	MN.extrap = "none";
+	DTAMB.interp = "linear";
+	DTAMB.extrap = "none";
+	
+	ALT = 0 {
+		MN = 0.0 {
+			DTAMB = { -18, -9, 0, 9, 18}
+			
+			N1C2 = {10001, 10002, 10003, 10004, 10005}
+		}
+		MN = 1.0 {
+			DTAMB = { -18, -9, 0, 9, 18}
+			
+			N1C2 = {12001, 12002, 12003, 12004, 12005}
+		}		
+	}
+	ALT = 10000 {
+		MN = 0.0 {
+			DTAMB = { -18, -9, 0, 9, 18}
+			
+			N1C2 = {13001, 13002, 13003, 13004, 13005}
+		}
+		MN = 1.0 {
+			DTAMB = { -18, -9, 0, 9, 18}
+			
+			N1C2 = {14001, 14002, 14003, 14004, 14005}
+		}		
+	}	
+}
+
+
